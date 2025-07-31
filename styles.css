@@ -1,0 +1,315 @@
+/* 디지털느낌 폰트 */
+@import url('https://fonts.cdnfonts.com/css/digital-numbers');
+/* .add-page{
+  height:300vh;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans";
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.span {
+  text-transform: uppercase;
+  font-family: "DM Mono";
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero {
+  background:url(https://cdn.pixabay.com/photo/2021/02/03/11/40/skull-5977620_1280.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(100px);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+.hero > *:not(.hero-overlay) {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+.about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: beige;
+}
+
+.hero-cards {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-cards .card {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 5/7;
+  padding: 0.75rem;
+  text-align: center;
+  justify-content: center;
+  background-color: black;
+  border: solid 2px rgb(0, 8, 126);
+  background: url(card-design.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-title {
+  width: 100%;
+}
+
+.hero-cards .card span {
+  font-size: 7rem;
+  font-family: 'Digital Numbers', sans-serif;
+  color:rgb(3, 43, 223)
+}
+
+.hero-cards .card#hero-card-1 {
+  transform-origin: top right;
+  z-index: 5;
+}
+
+.hero-cards .card#hero-card-2 {
+  transform-origin: top right;
+  z-index: 4;
+}
+
+.hero-cards .card#hero-card-3 {
+  z-index: 3;
+}
+.hero-cards .card#hero-card-4 {
+  z-index: 2;
+}
+.hero-cards .card#hero-card-5 {
+  transform-origin: top left;
+  z-index: 1;
+}
+.hero-cards .card#hero-card-6 {
+  transform-origin: top left;
+  z-index: 0;
+}
+
+
+.services {
+  padding: 8rem 2rem;
+}
+
+.services-header {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transform: translateY(400%);
+  will-change: transform;
+}
+
+.cards {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+  background:url(end-bg.jpg);
+  background-size: cover;
+}
+
+.cards-container {
+  position: relative;
+  width: 75%;
+  height: 100%;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.cards-container .card {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 5/7;
+  perspective: 1000px;
+}
+
+.cards-container .card .card-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+#card-1 .card-wrapper {
+  animation-delay: 0;
+}
+
+#card-2 .card-wrapper {
+  animation-delay: 0.25s;
+}
+
+#card-3 .card-wrapper {
+  animation-delay: 0.5s;
+}
+
+#card-4 .card-wrapper {
+  animation-delay: 0.75s;
+}
+
+
+#card-5 .card-wrapper {
+  animation-delay: 1s;
+}
+#card-6 .card-wrapper {
+  animation-delay: 1.25s;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  padding: 1rem;
+  background: url(/card-design.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-size: 7rem;
+  font-family: 'Digital Numbers', sans-serif;
+  color:rgb(22, 187, 187);
+  text-align: center;
+  justify-content: center;
+  display:flex;
+}
+
+.flip-card-back {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+.card-copy {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-copy p {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: bisque;
+  border-radius: 0.25rem;
+}
+
+.cards #card-1 {
+  transform: translateX(100%) translateY(-100%) rotate(-10deg) scale(0.25);
+  z-index: 5;
+}
+
+.cards #card-2 {
+  transform: translateX(300%) translateY(-100%) rotate(-10deg) scale(0.25);
+  z-index: 4;
+}
+
+.cards #card-3 {
+  transform: translateX(-100%) translateY(-100%) rotate(5deg) scale(0.25);
+  z-index: 3;
+}
+
+.cards #card-4 {
+  transform: translateX(0%) translateY(-100%) rotate(0deg) scale(0.25);
+  z-index: 2;
+}
+
+.cards #card-5 {
+  transform: translateX(-300%) translateY(-100%) rotate(5deg) scale(0.25);
+  z-index: 1;
+}
+
+.cards #card-6 {
+  transform: translateX(-300%) translateY(-100%) rotate(10deg) scale(0.25);
+  z-index: 0;
+}
+
+.cards .cards-container .card {
+  opacity: 0;
+}
+
+.mobile-cards {
+  display: none;
+}
